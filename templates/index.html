@@ -3,17 +3,33 @@
 <head>
     <meta charset="utf-8">
     <title>Spam Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: aquamarine;
+        }
+        textarea {
+            width: 400px;
+            height: 120px;
+            color: beige;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <centre>
     <h2>Enter Your Email Message</h2>
     <form method="POST" action="/predict">
-        <textarea name="message" rows="5" cols="50" placeholder="Type your message here..."></textarea><br><br>
+        <textarea name="message" placeholder="Type your message here..."></textarea><br><br>
         <input type="submit" value="Classify">
     </form>
+    
     {% if prediction %}
         <h3>Prediction: {{ prediction }}</h3>
     {% endif %}
-</centre>
 </body>
 </html>
